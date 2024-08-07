@@ -1,0 +1,12 @@
+<div class="calculator">
+	<input type="number" class="calc_input" [value]="first" />
+	<select>
+		@for (operation of operations; track operation) {
+		<option [value]="operation">{{ operation }}</option>
+		}
+	</select>
+	<input type="number" class="calc_input" [value]="second" />
+
+	<span class="result">{{ result ? result : "Press calculate" }}</span>
+	<button (click)="calc()">Calculate</button>
+</div>
