@@ -1,1 +1,8 @@
-<p>test works!</p>
+<p>{{ name }} works!</p>
+<p>Father info: {{ inputData }}</p>
+<input
+	type="text"
+	[placeholder]="name"
+	[(ngModel)]="name"
+/>
+<button (click)="handleSendData()">Emit</button>

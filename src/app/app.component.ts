@@ -12,4 +12,9 @@ import { TestComponent } from "./components/test/test.component";
 })
 export class AppComponent {
 	title = "interview-master";
+	hoe = "HO HO HO!";
+
+	handleEmitFromBottom = (data: string) => {
+		this.hoe = data;
+	};
 }
