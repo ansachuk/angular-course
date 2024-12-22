@@ -1,0 +1,11 @@
+<header>
+	<app-container>
+		<ul class="links">
+			@for (link of links; track link.route) {
+			<li>
+				<a href="{{ link.route }}">{{ link.label }}</a>
+			</li>
+			} @empty {}
+		</ul>
+	</app-container>
+</header>

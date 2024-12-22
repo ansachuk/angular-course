@@ -1,0 +1,31 @@
+header {
+	background-color: #2a2334;
+
+	.links {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		gap: 60px;
+
+		li {
+			font-size: 22px;
+			position: relative;
+
+			::after {
+				content: "";
+				display: block;
+				width: 0;
+				height: 2px;
+				background-color: #fff;
+				transition: width 0.3s ease;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+
+			&:hover::after {
+				width: 100%;
+			}
+		}
+	}
+}
