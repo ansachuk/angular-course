@@ -1,1 +1,11 @@
-<p>modal works!</p>
+<div
+	class="backdrop"
+	(click)="close()"
+>
+	<div
+		class="modal"
+		(click)="$event.stopPropagation()"
+	>
+		{{ type }}
+	</div>
+</div>

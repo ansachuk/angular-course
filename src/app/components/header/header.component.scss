@@ -11,20 +11,28 @@ header {
 			font-size: 22px;
 			position: relative;
 
-			::after {
+			transition: color 0.3s ease;
+
+			&::after {
 				content: "";
 				display: block;
 				width: 0;
-				height: 2px;
+				height: 3px;
 				background-color: #fff;
-				transition: width 0.3s ease;
+
+				transition: width 0.3s ease, background-color 0.3s ease;
 				position: absolute;
-				bottom: 0;
-				left: 0;
+				bottom: -5px;
+				left: -5px;
+			}
+
+			&:hover {
+				color: #dfaf02;
 			}
 
 			&:hover::after {
-				width: 100%;
+				width: 120%;
+				background-color: #dfaf02;
 			}
 		}
 	}

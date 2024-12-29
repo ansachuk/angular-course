@@ -1,1 +1,23 @@
-<p>main works!</p>
+<main>
+	<app-container>
+		<section class="main-section">
+			@for (type of modalTypes; track type.type) {
+			<button
+				class="open-modal-btn"
+				[ngClass]="{
+					red: type.color === 'red',
+					blue: type.color === 'blue'
+				}"
+				(click)="openModal(type.type)"
+			>
+				Open {{ type.type }} modal
+			</button>
+			@if(type.type === currentType) {
+			<app-modal
+				[type]="currentType"
+				(closeModal)="currentType = undefined"
+			></app-modal>
+			}}
+		</section>
+	</app-container>
+</main>
