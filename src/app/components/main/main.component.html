@@ -17,7 +17,9 @@
 			<app-modal
 				[type]="currentType"
 				(closeModal)="currentType = undefined"
-			></app-modal>
+			>
+				<app-pipe-modal-content [type]="currentType"></app-pipe-modal-content>
+			</app-modal>
 			}}
 		</section>
 	</app-container>

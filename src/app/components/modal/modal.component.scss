@@ -34,32 +34,6 @@
 	}
 }
 
-.content {
-	margin-top: 22px;
-	height: calc(100% - 60px);
-
-	.date,
-	.time,
-	.currency {
-		margin-top: 50px;
-
-		height: 100%;
-
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 30px;
-
-		li {
-			padding-bottom: 20px;
-
-			&:not(:last-of-type) {
-				border-bottom: 1px solid #4b4b4b;
-			}
-		}
-	}
-}
-
 .close-btn {
 	position: absolute;
 	top: 20px;

@@ -1,0 +1,24 @@
+<div class="content">
+	@switch (type) { @case ("date") {
+	<ul class="date">
+		<li>Day: {{ now | date : "dd" }}</li>
+		<li>Month: {{ now | date : "MMMM" }}</li>
+		<li>Year: {{ now | date : "yyyy" }}</li>
+	</ul>
+	} @case ("time") {
+	<ul class="time">
+		<li>Hours EST: {{ now | date : "hh" : "EST" }}</li>
+		<li>Hours CST: {{ now | date : "hh" : "CST" }}</li>
+		<li>Hours MST: {{ now | date : "hh" : "MST" }}</li>
+		<li>Hours PST: {{ now | date : "hh" : "PST" }}</li>
+	</ul>
+	} @case ("currency") {
+	<ul class="currency">
+		<li>Currency: {{ 12 | currency : "GBP" }}</li>
+		<li>Symbol: {{ 23 | currency : "GBP" }}</li>
+		<li>Code: {{ 35 | currency : "GBP" }}</li>
+	</ul>
+	} @default {
+	<p>Something went wrong</p>
+	} }
+</div>
