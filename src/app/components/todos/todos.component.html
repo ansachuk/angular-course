@@ -1,0 +1,78 @@
+<section>
+	@if (isModalOpen){
+	<div
+		class="backdrop"
+		(click)="handleModal(false)"
+	>
+		<div
+			class="modal"
+			(click)="$event.stopPropagation()"
+		>
+			<button
+				class="close-btn"
+				(click)="handleModal(false)"
+			>
+				X
+			</button>
+
+			<form (submit)="handleSubmit()">
+				<input
+					type="text"
+					formControlName="title"
+				/>
+				<textarea formControlName="description"></textarea>
+				<input
+					type="text"
+					formControlName="status"
+				/>
+				<input
+					type="number"
+					formControlName="priority"
+					min="1"
+					max="5"
+				/>
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+	</div>
+	}
+
+	<ul class="todos-list">
+		@for (todo of todos; track todo.id) {
+		<li class="todo">
+			<div class="todo-content">
+				<div class="todo-header">
+					<h3 class="title">{{ todo.title }}</h3>
+					<span
+						class="priority"
+						[attr.data-priority]="todo.priority"
+						>{{ todo.priority }}</span
+					>
+				</div>
+
+				<p class="description">{{ todo.description }}</p>
+
+				<div class="todo-footer">
+					<span
+						class="status"
+						[class]="'status-' + todo.status"
+					>
+						{{ todo.status === 0 ? "Done" : todo.status === 1 ? "In Progress" : "Todo" }}
+					</span>
+					<div class="actions">
+						<button class="edit-btn">Edit</button>
+						<button class="delete-btn">Delete</button>
+					</div>
+				</div>
+			</div>
+		</li>
+		}
+	</ul>
+
+	<button
+		class="open-modal-btn"
+		(click)="handleModal(true)"
+	>
+		Add todo
+	</button>
+</section>
