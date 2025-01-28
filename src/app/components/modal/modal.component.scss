@@ -15,7 +15,7 @@
 	transform: translate(-50%, -50%);
 	z-index: 11;
 
-	background: #ffffff;
+	background: #fff;
 
 	height: 400px;
 	width: 200px;
@@ -23,4 +23,60 @@
 
 	padding: 20px;
 	color: #000;
+
+	&-title {
+		text-align: center;
+
+		margin-top: 30px;
+
+		font-size: 24px;
+		font-weight: normal;
+	}
+}
+
+.content {
+	margin-top: 22px;
+	height: calc(100% - 60px);
+
+	.date,
+	.time,
+	.currency {
+		margin-top: 50px;
+
+		height: 100%;
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 30px;
+
+		li {
+			padding-bottom: 20px;
+
+			&:not(:last-of-type) {
+				border-bottom: 1px solid #4b4b4b;
+			}
+		}
+	}
+}
+
+.close-btn {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+
+	font-weight: 600;
+
+	border: 2px solid #4b4b4b;
+	border-radius: 100%;
+	width: 30px;
+	height: 30px;
+
+	transition: color 0.3s ease, background-color 0.3s ease;
+
+	&:hover,
+	&:focus {
+		color: #fff;
+		background-color: #4b4b4b;
+	}
 }
